@@ -70,3 +70,7 @@ typings/
 .yarn-integrity
 .env
 .next
+
+public/
+dist/
+!.gitkeep
