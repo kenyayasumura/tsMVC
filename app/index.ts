@@ -16,4 +16,6 @@ class Server {
     }
 }
 
+//test
+
 const server:Server = new Server()
