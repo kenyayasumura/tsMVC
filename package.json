@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
+    "watch": "tsc --watch",
     "build": "webpack",
     "dev": "run-s tsc node ./dist/index.js"
   },
@@ -22,7 +23,9 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "mysql": "^2.18.1",
+    "dotenv": "^8.2.0",
+    "handlebars": "^4.7.6",
+    "mysql2": "^2.2.2",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.25"
   }
