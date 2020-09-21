@@ -4,7 +4,7 @@ import urlParser from 'url'
 import fs from 'fs'
 import handlebars from 'handlebars'
 import { parse } from 'path'
-import { loadavg } from 'os'
+import util from 'util'
 
 class Server {
     public rooting(request: { url: string; }) {
@@ -35,6 +35,18 @@ class Server {
         let qs = parsedURL.query
         let headers = req.headers
         let method = req.method?.toLowerCase()
+
+
+        //https://www.youtube.com/watch?v=LavEJd38vd8&list=PLyuRouwmQCjnr-rRrhbPrS4YQ0brDQ-14&index=5
+        //res.write(util.inspect(qs))
+
+        if ( req.method?.toLowerCase() == 'post' ) {
+
+        } else if ( req.method?.toLowerCase() == 'get' ) {
+
+        } else {
+
+        }
 
 
         req.on('data', () => {
@@ -117,6 +129,15 @@ const routes:any = {
         res.end('\n')
     },
     kenny2: (data:object,res:ServerResponse)=> {
+        let payload = {
+            name: "Kenny"
+        }
+        let payloadStr = JSON.stringify(payload)
+        res.setHeader('Content-Type', 'Application/Json')
+        res.setHeader('Access-Control-Allow-Origin', '*')
+        res.writeHead(200)
+        res.write(payloadStr)
+        res.end('\n')
     },
     kenny3: (data:object,res:ServerResponse)=>{
     },
